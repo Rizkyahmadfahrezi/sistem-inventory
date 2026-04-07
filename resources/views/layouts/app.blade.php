@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    {{--  --}}
     {{-- <nav>Header Navigasi</nav> --}}
     <div class="container">
         @yield('content') <!-- Tempat konten unik -->

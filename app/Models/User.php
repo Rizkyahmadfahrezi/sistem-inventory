@@ -48,15 +48,14 @@ class User extends Authenticatable
         ];
     }
 
-
     // method Hak Akses
-    public function isAdmin():bool
+    public function isAdmin(): bool
     {
         return $this->role === 'admin';
     }
-    public function isUser():bool
+
+    public function isUser(): bool
     {
         return $this->role === 'user';
     }
-    
 }

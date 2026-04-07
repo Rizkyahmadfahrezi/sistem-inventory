@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hallo {{ Auth::user()->name }}</h1>
-</body>
-</html>
+@extends('layouts.app')
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('roles\admin.css') }}">
+@endpush
+
+@section('title', 'Dashboard Admin')
+@section('sidebar')
+    @include('partials.sidebar')
+@endsection

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -17,15 +18,14 @@ class AuthController extends Controller
         return view('Auth.login');
     }
 
-
     public function Login(Request $request)
     {
 
         // validasi login
-        $validatedData =    $request->validate(
+        $validatedData = $request->validate(
             [
                 'email' => ['required', 'email'],
-                'password' => ['required', 'max:255']
+                'password' => ['required', 'max:255'],
             ],
             [
                 'email.unique' => 'Alamat Email Sudah Digunakan',
@@ -41,7 +41,7 @@ class AuthController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'email anda salah'
+            'email' => 'email anda salah',
         ])->onlyInput('email');
     }
 
@@ -58,7 +58,7 @@ class AuthController extends Controller
 
     public function RedirectToDashboard()
     {
-        /** @var \App\Models\User $user */
+        /** @var User $user */
         $user = Auth::user();
 
         if ($user->isAdmin()) {
