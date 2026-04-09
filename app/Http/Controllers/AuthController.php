@@ -11,10 +11,6 @@ class AuthController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
-            return $this->RedirectToDashboard();
-        }
-
         return view('Auth.login');
     }
 
@@ -37,7 +33,18 @@ class AuthController extends Controller
         if (Auth::attempt($validatedData)) {
             $request->session()->regenerate();
 
-            return $this->RedirectToDashboard();
+            /** @var User $user */
+        $user = Auth::user();
+
+        if ($user->isAdmin()) {
+            return redirect()->route('Admin-Dashboard')->with('success', 'Login Berhasil');
+        }
+
+        if ($user->isUser()) {
+            return redirect()->route('User-Dashboard');
+        }
+        abort(403, 'tidak dikenali');
+
         }
 
         return back()->withErrors([
@@ -54,20 +61,5 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/login');
-    }
-
-    public function RedirectToDashboard()
-    {
-        /** @var User $user */
-        $user = Auth::user();
-
-        if ($user->isAdmin()) {
-            return redirect()->route('Admin-Dashboard');
-        }
-
-        if ($user->isUser()) {
-            return redirect()->route('User-Dashboard');
-        }
-        abort(403, 'tidak dikenali');
     }
 }
