@@ -1,12 +1,57 @@
-.sidebar{
-    width: 200px;
-    height: 100vh;
-    background-color:black ; 
-    color: #fff;
-}
-ul{
+.sidebar {
+    position: fixed;
+    width: 232px;
+    height: 950px;
+    background-color: #fff;
     text-decoration: none;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    padding: 0px 24px;
+    padding-top: 24px;
+    padding-bottom: 32px;
+}
+
+.sidebar img {
+    display: flex;
+    width: 146px;
+    height: 48px;
+    margin-bottom: 32px;
+}
+
+.sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 44px;
+}
+
+.sidebar .setting {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 44px;
+}
+
+.sidebar .menu li {
+    align-content: center;
+    height: 56px;
+}
+
+.sidebar .setting li {
+    align-content: center;
+    height: 56px;
+}
+
+.sidebar .menu li a {
+    color: gray;
+}
+
+.sidebar .setting li a {
+    color: gray;
+}
+
+.sidebar .setting form button {
+    background-color: #fff;
+    border: none;
+    height: 56px;
+    color: gray;
 }
