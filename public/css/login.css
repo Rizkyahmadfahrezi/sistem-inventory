@@ -1,0 +1,108 @@
+.card-login {
+    width: 360px;
+    height: 562px;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'inter';
+}
+
+.head-login {
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.head-login img {
+    width: 150px;
+    height: 75px;
+    margin-bottom: 24px;
+}
+
+.head-login h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.head-login p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 32px;
+    color: gray;
+}
+
+form {
+    width: 100%;
+    height: 332px;
+}
+
+form label {
+    display: block;
+    width: fit-content;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+form input[type="text"] {
+    border-radius: 8px;
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+}
+
+form input[type="password"] {
+    border-radius: 8px;
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+}
+
+form button {
+    border-radius: 8px;
+    width: 100%;
+    height: 44px;
+    margin-top: 24px;
+    padding: 10px 14px;
+    background-color: #1366d9;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+form button.Log-in-google{
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 100%;
+    height: 44px;
+    margin-top: 24px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    gap: 1rem;
+}
+
+form button.Log-in-google .logo-img {
+    width: 24px;
+    height: 24px;
+    align-self: center;
+}
+
+form button.Log-in-google p{
+    font-size: 16px;
+    font-weight: 400;
+    align-self: center;
+}

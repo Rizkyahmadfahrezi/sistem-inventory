@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endpush
 
 @section('title', 'Halaman Home')
@@ -16,22 +16,29 @@
         </div>
     @endif
     <div class="card-login">
-        <h1>Login</h1>
+        <div class="head-login">
+            <img src="{{ asset('images/Logo Sinar Jaya Inventory.png') }}" alt="Logo">
+            <h1>Log in to your account</h1>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+
         <form action="{{ route('Login') }}" method="post">
             @csrf
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <div class="input-email">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email" required>
             </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+            <div class="input-password">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
             <button type="submit">Login</button>
+            <button type="submit" class="Log-in-google">
+                <img src="{{ asset('images/logo_google.svg') }}" alt="logo" class="logo-img">
+                <p>Log in With Google</p>
+            </button>
+
+            {{-- <button type="submit" class="Log-in-google">Log in With Google</button> --}}
         </form>
     </div>
-@endsection
-
-@section('footer')
-    <p>Copyright &copy; 2024</p>
 @endsection
