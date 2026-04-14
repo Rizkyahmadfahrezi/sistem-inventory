@@ -14,5 +14,9 @@
 @endsection
 
 @section('content')
-    
+
+@endsection
+
+@section('footer')
+    @include('partials.footer')
 @endsection
